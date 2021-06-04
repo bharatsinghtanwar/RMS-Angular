@@ -18,15 +18,29 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
+            
             "styles": [
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true
+              },
+              {
+                "input": "./node_modules/font-awesome/css/font-awesome.min.css",
+                "inject": true
+              },
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -39,7 +53,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -57,7 +70,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -119,6 +133,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "RMS"
+    }
+  },
+  "defaultProject": "RMS",
+  "cli": {
+    "analytics": "7bbec4ed-ee4d-4081-9442-abae89ac28c0"
+  }
 }
